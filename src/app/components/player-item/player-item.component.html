@@ -9,6 +9,22 @@
         <div class="player-row-cell player-row-name-cell">{{ player.name }}</div>
         <div class="player-row-cell player-row-position-cell">{{ player.position }}</div>
         <div class="player-row-cell player-row-age-cell">{{ player.age }}</div>
-        <div class="player-row-cell player-row-is-start-cell">{{ player.isStart }}</div>
+        <div class="player-row-cell player-row-is-start-cell">
+            <mat-icon
+                *ngIf="player.isStart; else reserve"
+                class="green"
+                aria-hidden="false"
+                aria-label="is in start"
+                fontIcon="check_circle_outlined"
+            ></mat-icon>
+            <ng-template #reserve>
+                <mat-icon
+                    class="grey"
+                    aria-hidden="false"
+                    aria-label="in reserve"
+                    fontIcon="hourglass_empty"
+                ></mat-icon>
+            </ng-template>
+        </div>
     </div>
 </ng-container>

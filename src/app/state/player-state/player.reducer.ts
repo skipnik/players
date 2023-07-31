@@ -1,20 +1,25 @@
 import { createReducer, on } from "@ngrx/store";
 import { toggleIsStart } from "./player.actions";
 import { initialPlayerState } from "./player.state";
+import { Player } from "src/app/models/player.model";
 
 export const playerReducer = createReducer(
     initialPlayerState,
-    on(toggleIsStart, (state, {playerId}) => {
+    on(toggleIsStart, (state, { playerId }) => {
         console.log('on [Players] Toogle player is start');
 
-        let tmpPlayer = state.players.find((player) => {
-            return player.id === playerId
-        });
+        const updatedPlayers: Array<Player> = state.players.map(
+            player => {
+                if (player.id === playerId) {
+                    player.toogleIsStart();
+                }
+                return player;
+            }
+        );
 
-        if (tmpPlayer) {
-            tmpPlayer.toogleIsStart();
-        }
-
-        return state;
-    }),
+        return {
+            ...state,
+            players: updatedPlayers
+        };
+    })
 );

@@ -7,7 +7,7 @@
             <div class="player-row-cell player-row-name-cell">Name</div>
             <div class="player-row-cell player-row-position-cell">Position</div>
             <div class="player-row-cell player-row-age-cell">Age</div>
-            <div class="player-row-cell player-row-is-start-cell">In start</div>
+            <div class="player-row-cell player-row-is-start-cell">In start ({{ playersInStart$ | async }})</div>
         </div>
         <player-item
             *ngFor="let player of list"

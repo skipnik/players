@@ -5,7 +5,7 @@ import { Player } from "src/app/models/player.model";
 import { PlayerItem } from "../player-item/player-item.component";
 import { Store } from "@ngrx/store";
 import { AppState } from "src/app/state/player-state/player.state";
-import { selectPlayersCount } from "src/app/state/player-state/player.selectors";
+import { playersInStartAmountSelector, playersSelector } from "src/app/state/player-state/player.selectors";
 
 @Component({
     standalone: true,
@@ -24,7 +24,11 @@ export class PlayrList {
 
     list$: Observable<Array<Player>>;
 
+    playersInStart$: Observable<Number>;
+
     constructor(private store: Store<AppState>) {
-        this.list$ = store.select(selectPlayersCount);
+        this.list$ = store.select(playersSelector);
+
+        this.playersInStart$ = store.select(playersInStartAmountSelector);
     }
 }

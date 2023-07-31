@@ -4,6 +4,7 @@ import { Store } from "@ngrx/store";
 import { Player } from "src/app/models/player.model";
 import { toggleIsStart } from "src/app/state/player-state/player.actions";
 import { AppState } from "src/app/state/player-state/player.state";
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
     standalone: true,
@@ -12,7 +13,8 @@ import { AppState } from "src/app/state/player-state/player.state";
     styleUrls: ['./../player-list/player-list.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [
-        NgIf
+        NgIf,
+        MatIconModule
     ]
 })
 export class PlayerItem {
