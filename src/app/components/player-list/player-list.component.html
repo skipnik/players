@@ -1,0 +1,17 @@
+<ng-container>
+    <div class="title">Player list</div>
+
+    <div class="player-table-container" *ngIf="list$ | async as list">
+        <div class="player-row player-header-row">
+            <div class="player-row-cell player-row-number-cell">Number</div>
+            <div class="player-row-cell player-row-name-cell">Name</div>
+            <div class="player-row-cell player-row-position-cell">Position</div>
+            <div class="player-row-cell player-row-age-cell">Age</div>
+            <div class="player-row-cell player-row-is-start-cell">In start</div>
+        </div>
+        <player-item
+            *ngFor="let player of list"
+            [player] = "player"
+        ></player-item>
+    </div>
+</ng-container>

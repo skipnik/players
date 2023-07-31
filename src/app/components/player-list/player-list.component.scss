@@ -1,0 +1,39 @@
+.title {
+    margin: 10px
+}
+
+.player-table-container {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.player-header-row {
+    font-weight: 500;
+    display: flex;
+    cursor: default;
+}
+
+.player-row {
+    display: flex;
+    cursor: default;
+}
+
+.player-row-cell {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    margin: 5px;
+}
+
+.player-row-number-cell {
+    width: 50px;
+    min-width: 50px;
+    flex-grow: inherit;
+}
+
+.player-row-position-cell,
+.player-row-is-start-cell,
+.player-row-age-cell {
+    text-align: center;
+}

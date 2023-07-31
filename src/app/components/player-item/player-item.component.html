@@ -1,0 +1,14 @@
+<ng-container>
+    <div
+        class="player-row"
+        *ngIf="player"
+        (click)="onPlayerClick(player.id)"
+        [attr.data-id]="player.id"
+    >
+        <div class="player-row-cell player-row-number-cell">{{ player.nr }}</div>
+        <div class="player-row-cell player-row-name-cell">{{ player.name }}</div>
+        <div class="player-row-cell player-row-position-cell">{{ player.position }}</div>
+        <div class="player-row-cell player-row-age-cell">{{ player.age }}</div>
+        <div class="player-row-cell player-row-is-start-cell">{{ player.isStart }}</div>
+    </div>
+</ng-container>
